@@ -82,7 +82,8 @@ module ImpressionistController
     def direct_create_statement(query_params={})
       query_params.reverse_merge!(
         :impressionable_type => controller_name.singularize.camelize,
-        :impressionable_id=> params[:id]
+        :impressionable_id=> params[:id],
+        :institute_id => get_institute_id
         )
       associative_create_statement(query_params)
     end

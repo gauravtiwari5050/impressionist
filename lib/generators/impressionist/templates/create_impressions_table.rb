@@ -12,6 +12,7 @@ class CreateImpressionsTable < ActiveRecord::Migration
       t.string :session_hash
       t.text :message
       t.text :referrer
+      t.integer :institute_id
       t.timestamps
     end
     add_index :impressions, [:impressionable_type, :impressionable_id, :request_hash], :name => "poly_request_index", :unique => false
@@ -21,6 +22,7 @@ class CreateImpressionsTable < ActiveRecord::Migration
     add_index :impressions, [:controller_name,:action_name,:ip_address], :name => "controlleraction_ip_index", :unique => false
     add_index :impressions, [:controller_name,:action_name,:session_hash], :name => "controlleraction_session_index", :unique => false
     add_index :impressions, :user_id
+    add_index :impressions, :institute_id
   end
 
   def self.down
