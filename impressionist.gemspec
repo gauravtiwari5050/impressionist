@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
     "app/models/impression.rb",
     "app/models/impressionist/bots.rb",
     "app/models/impressionist/impressionable.rb",
-    "config/routes.rb",
     "impressionist.gemspec",
     "lib/generators/impressionist/impressionist_generator.rb",
     "lib/generators/impressionist/templates/create_impressions_table.rb",
